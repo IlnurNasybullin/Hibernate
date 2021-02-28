@@ -1,0 +1,2 @@
+ALTER TABLE passenger_dict_phone_number RENAME TO passenger_to_dict_phone_number;
+ALTER TABLE passenger_document RENAME TO passenger_to_document;
