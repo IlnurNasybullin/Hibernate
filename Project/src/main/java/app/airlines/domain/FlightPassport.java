@@ -3,7 +3,7 @@ package app.airlines.domain;
 import app.airlines.domain.dictionary.OperatedCompany;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity(name = "flight_passport")
 public class FlightPassport extends AbstractEntity {
@@ -30,7 +30,7 @@ public class FlightPassport extends AbstractEntity {
     /** Персонал, обслуживавший полёт */
     @ManyToMany
     @JoinTable(name = "flight_passport_to_staff", inverseJoinColumns = @JoinColumn(name = "staff_id"))
-    private Set<Staff> staffs;
+    private List<Staff> staffs;
 
     public Long getId() {
         return id;
@@ -64,11 +64,11 @@ public class FlightPassport extends AbstractEntity {
         this.operatedCompany = operatedCompany;
     }
 
-    public Set<Staff> getStaffs() {
+    public List<Staff> getStaffs() {
         return staffs;
     }
 
-    public void setStaffs(Set<Staff> staffs) {
+    public void setStaffs(List<Staff> staffs) {
         this.staffs = staffs;
     }
 }
