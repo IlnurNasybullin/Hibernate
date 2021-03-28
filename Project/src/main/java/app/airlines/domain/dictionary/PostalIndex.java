@@ -10,11 +10,11 @@ import javax.persistence.Entity;
 @AttributeOverride(name = "name", column = @Column(name = "postal_code"))
 public class PostalIndex extends AbstractDictionary {
 
-    private String getPostalCode() {
+    public String getPostalCode() {
         return getName();
     }
 
-    private void setPostalCode(String postalCode) {
+    public void setPostalCode(String postalCode) {
         setName(postalCode);
     }
 
