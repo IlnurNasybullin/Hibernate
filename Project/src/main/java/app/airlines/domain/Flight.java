@@ -3,7 +3,6 @@ package app.airlines.domain;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 public class Flight extends AbstractEntity {
