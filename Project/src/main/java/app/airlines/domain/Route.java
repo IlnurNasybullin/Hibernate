@@ -15,13 +15,13 @@ public class Route {
 
     /** Аэропорт отбытия */
     @ManyToOne
-    @JoinColumn(name = "from")
-    private Airport from;
+    @JoinColumn(name = "from_airport_id")
+    private Airport fromAirport;
 
     /** Аэропорт прибытия */
     @ManyToOne
-    @JoinColumn(name = "to")
-    private Airport to;
+    @JoinColumn(name = "to_airport_id")
+    private Airport toAirport;
 
     public Long getId() {
         return id;
@@ -31,20 +31,20 @@ public class Route {
         this.id = id;
     }
 
-    public Airport getFrom() {
-        return from;
+    public Airport getFromAirport() {
+        return fromAirport;
     }
 
-    public void setFrom(Airport from) {
-        this.from = from;
+    public void setFromAirport(Airport fromAirport) {
+        this.fromAirport = fromAirport;
     }
 
-    public Airport getTo() {
-        return to;
+    public Airport getToAirport() {
+        return toAirport;
     }
 
-    public void setTo(Airport to) {
-        this.to = to;
+    public void setToAirport(Airport toAirport) {
+        this.toAirport = toAirport;
     }
 
     @Override
