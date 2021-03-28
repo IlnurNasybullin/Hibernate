@@ -4,7 +4,7 @@ import app.airlines.domain.dictionary.PhoneNumber;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Set;
+import java.util.List;
 
 @MappedSuperclass
 public abstract class AbstractPerson extends AbstractEntity {
@@ -28,7 +28,7 @@ public abstract class AbstractPerson extends AbstractEntity {
     /** Документы, удостоверяющие личность (паспорта) */
     @OneToMany
     @JoinTable(inverseJoinColumns = @JoinColumn(name = "document_id"))
-    private Set<IdentificationDocument> documents;
+    private List<IdentificationDocument> documents;
 
     /** Адрес */
     @ManyToOne
@@ -37,7 +37,7 @@ public abstract class AbstractPerson extends AbstractEntity {
     /** Телефонные номера */
     @OneToMany
     @JoinTable(inverseJoinColumns = @JoinColumn(name = "phone_number_id"))
-    private Set<PhoneNumber> phoneNumbers;
+    private List<PhoneNumber> phoneNumbers;
 
     public String getLastname() {
         return lastname;
@@ -79,19 +79,19 @@ public abstract class AbstractPerson extends AbstractEntity {
         this.address = address;
     }
 
-    public Set<PhoneNumber> getPhoneNumbers() {
+    public List<PhoneNumber> getPhoneNumbers() {
         return phoneNumbers;
     }
 
-    public void setPhoneNumbers(Set<PhoneNumber> phoneNumbers) {
+    public void setPhoneNumbers(List<PhoneNumber> phoneNumbers) {
         this.phoneNumbers = phoneNumbers;
     }
 
-    public Set<IdentificationDocument> getDocuments() {
+    public List<IdentificationDocument> getDocuments() {
         return documents;
     }
 
-    public void setDocuments(Set<IdentificationDocument> passports) {
+    public void setDocuments(List<IdentificationDocument> passports) {
         this.documents = passports;
     }
 }
