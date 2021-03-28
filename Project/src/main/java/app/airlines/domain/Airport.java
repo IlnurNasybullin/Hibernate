@@ -12,12 +12,12 @@ public class Airport extends AbstractEntity {
     private Long id;
 
     /** Код ICAO (International Civil Aviation Organization) */
-    @Column(name = "icao_id", nullable = false, length = 4, unique = true)
-    private String icaoId;
+    @Column(nullable = false, length = 4, unique = true)
+    private String icao;
 
     /** Код IATA (International Air Transport Association) */
-    @Column(name = "iata_id", nullable = false, length = 3, unique = true)
-    private String iataId;
+    @Column(nullable = false, length = 3, unique = true)
+    private String iata;
 
     /** Координата широты */
     @Column
@@ -35,20 +35,20 @@ public class Airport extends AbstractEntity {
         this.id = id;
     }
 
-    public String getIcaoId() {
-        return icaoId;
+    public String getIcao() {
+        return icao;
     }
 
-    public void setIcaoId(String icaoId) {
-        this.icaoId = icaoId;
+    public void setIcao(String icao) {
+        this.icao = icao;
     }
 
-    public String getIataId() {
-        return iataId;
+    public String getIata() {
+        return iata;
     }
 
-    public void setIataId(String iataId) {
-        this.iataId = iataId;
+    public void setIata(String iata) {
+        this.iata = iata;
     }
 
     public Double getLatitude() {
