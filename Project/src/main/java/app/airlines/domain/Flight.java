@@ -2,6 +2,7 @@ package app.airlines.domain;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -31,7 +32,7 @@ public class Flight extends AbstractEntity {
 
     /** Реальное время прилёта */
     @Column(name = "real_end_time", nullable = false)
-    private LocalDateTime endStartTime;
+    private LocalDateTime realEndTime;
 
     /** Успешность рейса */
     @Column
@@ -45,7 +46,7 @@ public class Flight extends AbstractEntity {
     /** Список купленных на рейс билетов */
     @ManyToMany
     @JoinTable(name = "flight_to_plain_ticket", inverseJoinColumns = @JoinColumn(name = "plain_ticket_id"))
-    private Set<PlainTicket> plainTickets;
+    private List<PlainTicket> plainTickets;
 
     public Long getId() {
         return id;
@@ -87,12 +88,12 @@ public class Flight extends AbstractEntity {
         this.realStartTime = realStartTime;
     }
 
-    public LocalDateTime getEndStartTime() {
-        return endStartTime;
+    public LocalDateTime getRealEndTime() {
+        return realEndTime;
     }
 
-    public void setEndStartTime(LocalDateTime endStartTime) {
-        this.endStartTime = endStartTime;
+    public void setRealEndTime(LocalDateTime realEndTime) {
+        this.realEndTime = realEndTime;
     }
 
     public Boolean getSuccessful() {
@@ -111,11 +112,11 @@ public class Flight extends AbstractEntity {
         this.flightPassport = flightPassport;
     }
 
-    public Set<PlainTicket> getPlainTickets() {
+    public List<PlainTicket> getPlainTickets() {
         return plainTickets;
     }
 
-    public void setPlainTickets(Set<PlainTicket> plainTickets) {
+    public void setPlainTickets(List<PlainTicket> plainTickets) {
         this.plainTickets = plainTickets;
     }
 }
