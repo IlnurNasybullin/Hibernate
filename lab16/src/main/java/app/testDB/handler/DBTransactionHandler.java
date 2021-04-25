@@ -48,10 +48,10 @@ public class DBTransactionHandler implements TransactionHandler {
         } catch (Exception e) {
             e.printStackTrace();
             if (!transaction.getIgnoreException()) {
-                System.out.println("not-ignore");
+                System.err.println("not-ignore");
                 throw new RuntimeException(e);
             } else {
-                System.out.println("ignore");
+                System.err.println("ignore");
             }
         }
     }

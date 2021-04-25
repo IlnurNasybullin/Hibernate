@@ -189,6 +189,27 @@
                 <data>
                     <player id="15">
                         <firstname>Thread3</firstname>
+                        <lastname>Thread3</lastname>
+                    </player>
+                </data>
+            </transaction>
+        </transactions>
+    </thread-data>
+    <thread-data name="thread-4">
+        <transactions>
+            <transaction id="8" type="PERSIST">
+                <data>
+                    <player>
+                        <firstname>a</firstname>
+                        <lastname>a</lastname>
+                    </player>
+                </data>
+            </transaction>
+            <transaction id="7" type="MERGE">
+                <data>
+                    <player id="15">
+                        <firstname>Thread4</firstname>
+                        <lastname>Thread4</lastname>
                     </player>
                 </data>
             </transaction>
