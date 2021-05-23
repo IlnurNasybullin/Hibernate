@@ -13,6 +13,7 @@ public class Bank {
 
     private String name;
 
+    private String test;
 
     public Long getId() {
         return id;
@@ -28,6 +29,14 @@ public class Bank {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getTest() {
+        return test;
+    }
+
+    public void setTest(String test) {
+        this.test = test;
     }
 }
 

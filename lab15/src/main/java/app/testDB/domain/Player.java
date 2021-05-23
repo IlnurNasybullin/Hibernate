@@ -12,7 +12,6 @@ public class Player extends AbstractPerson {
     @SequenceGenerator(name = "playerIdGenerator", sequenceName = "player_seq", allocationSize = 1)
     private Long id;
 
-
     @Override
     public Long getId() {
         return id;
